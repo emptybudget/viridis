@@ -99,7 +99,13 @@ viridis/
 | `--ivory` | `#f5f1e8` 아이보리 | 기본 배경 |
 | `--charcoal` | `#393c34` 차콜 | 문의 섹션 배경, 본문 |
 
-폰트: 한글 **Pretendard**, 영문 포인트 **Cormorant Garamond** (CDN으로 불러옴)
+폰트 (모두 **SIL Open Font License** — 상업적 무료 사용 가능, CDN으로 불러옴)
+
+| 폰트 | 용도 | 출처 |
+| --- | --- | --- |
+| 고운바탕 (Gowun Batang) | 한글 제목 | Google Fonts |
+| Pretendard | 본문 | jsDelivr (orioncactus/pretendard) |
+| Cormorant Garamond | 영문 포인트 (VIRIDIS, 번호, 라벨) | Google Fonts |
 
 ### 메인 사진 변경
 `index.html`의 히어로(`hero__img--main`, `hero__img--sub`) 이미지 경로와,
@@ -137,6 +143,7 @@ python3 -m http.server 8080
 - 프레임워크·빌드 없음. 브라우저 기본 기능만 사용 (`<dialog>`, `IntersectionObserver`).
 - 포트폴리오와 서비스 카드는 `portfolio-data.js` 데이터를 `main.js`가 화면에 그립니다.
 - 이미지는 WebP 2가지 크기(800 / 1600px). 목록은 지연 로딩(lazy) 처리.
+- CSS/JS를 수정하면 `index.html`의 `?v=3` 숫자를 올려 주세요. (방문자 브라우저에 예전 파일이 남지 않도록)
 - 접근성: 본문 바로가기 링크, 키보드 조작(←/→/Esc), `prefers-reduced-motion` 대응.
 - 원본 사진은 저장소에 포함하지 않았습니다 (용량 문제). 원본은 업체 측에서 보관합니다.
 - 향후 문의 폼, 인스타그램 연동, 다국어 등이 필요하면 Astro / Next.js 등으로 이전을 권장합니다.
