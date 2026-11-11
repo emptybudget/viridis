@@ -143,7 +143,12 @@
   var toggle = document.getElementById("menuToggle");
   var nav = document.getElementById("nav");
 
-  function onScroll() { header.classList.toggle("is-scrolled", window.scrollY > 20); }
+  var quickbar = document.querySelector(".quickbar");
+  function onScroll() {
+    header.classList.toggle("is-scrolled", window.scrollY > 20);
+    // 모바일 하단 연락 바: 첫 화면을 가리지 않도록 조금 내린 뒤 표시
+    quickbar.classList.toggle("is-visible", window.scrollY > 320);
+  }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 

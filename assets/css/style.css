@@ -148,25 +148,21 @@ ol, ul { padding: 0; list-style: none; }
 .hero__desc { font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--muted); margin-bottom: 40px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.hero__visual { position: relative; padding-bottom: 48px; }
-.hero__img { overflow: hidden; background: var(--ivory-deep); }
-.hero__img img { width: 100%; height: 100%; object-fit: cover; }
-.hero__img--main {
-  aspect-ratio: 4 / 5; max-height: 74vh; margin-left: auto;
-  border-radius: var(--radius-lg);
+/* 오른쪽 로고 영역: 아이보리 원 + 얇은 외곽선 */
+.hero__visual { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.hero__brand {
+  position: relative; display: grid; place-items: center;
+  width: min(100%, 480px); aspect-ratio: 1 / 1; border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, var(--white) 0%, var(--ivory-deep) 100%);
 }
-.hero__img--main img { animation: heroZoom 2.4s var(--ease) both; }
-.hero__img--sub {
-  position: absolute; left: clamp(-64px, -5vw, -24px); bottom: 0;
-  width: 38%; aspect-ratio: 1; border-radius: 50%;
-  border: 8px solid var(--ivory); box-shadow: 0 24px 50px -24px rgba(42, 44, 39, 0.45);
+.hero__brand::after {
+  content: ""; position: absolute; inset: -18px; border-radius: 50%;
+  border: 1px solid rgba(83, 102, 74, 0.18); pointer-events: none;
 }
-.hero__latin {
-  position: absolute; right: 0; bottom: 6px;
-  font-family: var(--font-serif); font-size: 1.05rem; color: var(--muted); letter-spacing: 0.02em;
-}
+.hero__brand img { width: 62%; height: auto; animation: heroIn 1.6s var(--ease) both; }
+.hero__latin { font-family: var(--font-serif); font-size: 1.05rem; color: var(--muted); letter-spacing: 0.02em; }
 
-@keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+@keyframes heroIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
 .ticker {
   margin-top: clamp(56px, 8vw, 96px); padding: 22px 0;
@@ -350,10 +346,19 @@ a.contact__value:hover { color: var(--olive); }
   .footer__info { flex-direction: column; }
   .footer__info span + span::before { content: none; }
 
-  .hero__inner { grid-template-columns: 1fr; }
-  .hero__visual { padding-left: 12%; }
-  .hero__img--main { max-height: none; }
-  .hero__img--sub { left: 0; width: 42%; }
+  .hero__inner { grid-template-columns: 1fr; gap: 32px; }
+  /* 모바일: 로고를 위로, 문구는 가운데 정렬 */
+  .hero { padding-top: calc(var(--header-h) + 28px); }
+  .hero__visual { order: -1; gap: 14px; }
+  .hero__brand { width: min(52vw, 210px); }
+  .hero__brand::after { inset: -10px; }
+  .hero__latin { font-size: 0.9rem; }
+  .hero__title { margin-bottom: 20px; }
+  .hero__desc { margin-bottom: 28px; }
+  .hero__text { text-align: center; }
+  .hero__text .eyebrow { justify-content: center; }
+  .hero__text .eyebrow::after { content: ""; width: 28px; height: 1px; background: currentColor; }
+  .hero__actions { justify-content: center; }
 
   .about__inner, .contact__inner { grid-template-columns: 1fr; }
   .about__head { position: static; }
@@ -367,12 +372,13 @@ a.contact__value:hover { color: var(--olive); }
   .footer__copy { margin-left: 0; width: 100%; }
 
   .quickbar {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    display: grid; transform: translateY(150%); transition: transform 0.5s var(--ease); grid-template-columns: 1fr 1fr; gap: 8px;
     position: fixed; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 40;
     padding: 8px; border-radius: 999px; background: rgba(57, 60, 52, 0.92);
     -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
     box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.5);
   }
+  .quickbar.is-visible { transform: none; }
   .quickbar a {
     display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px;
     color: var(--ivory); font-size: 0.92rem; font-weight: 500;
@@ -386,6 +392,8 @@ a.contact__value:hover { color: var(--olive); }
 }
 
 @media (max-width: 560px) {
+  .hero__text .eyebrow { font-size: 1rem; gap: 8px; }
+  .hero__text .eyebrow::before, .hero__text .eyebrow::after { width: 16px; }
   .service__grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .service-card__body { padding: 16px 14px 20px; }
   .service-card h3 { font-size: 1.15rem; letter-spacing: 0.04em; }
