@@ -81,9 +81,9 @@ window.VIRIDIS_DATA = {
     { category: "event", file: "event-01", title: "크리스마스 트리 연출" },
     { category: "event", file: "event-02", title: "크리스마스 트리 & 플라워" },
     { category: "event", file: "event-03", title: "로비 크리스마스 트리" },
-    { category: "event", file: "event-04", title: "추모 공간 플라워 테이블" },
+    { category: "event", file: "event-04", title: "행사장 입구 포토테이블" },
     { category: "event", file: "event-05", title: "크리스마스 트리 디테일" },
-    { category: "event", file: "event-06", title: "추모 플라워 디테일" },
+    { category: "event", file: "event-06", title: "포토테이블 디테일" },
     { category: "event", file: "event-07", title: "시즌 트리 연출" },
   ],
 };
