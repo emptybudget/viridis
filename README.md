@@ -103,7 +103,7 @@ viridis/
 
 | 폰트 | 용도 | 출처 |
 | --- | --- | --- |
-| 고운바탕 (Gowun Batang) | 한글 제목 | Google Fonts |
+| 함렛 (Hahmlet) | 한글 제목 (얇은 굵기 300) | Google Fonts |
 | Pretendard | 본문 | jsDelivr (orioncactus/pretendard) |
 | Cormorant Garamond | 영문 포인트 (VIRIDIS, 번호, 라벨) | Google Fonts |
 
@@ -147,7 +147,7 @@ python3 -m http.server 8080
 - 프레임워크·빌드 없음. 브라우저 기본 기능만 사용 (`<dialog>`, `IntersectionObserver`).
 - 포트폴리오와 서비스 카드는 `portfolio-data.js` 데이터를 `main.js`가 화면에 그립니다.
 - 이미지는 WebP 2가지 크기(800 / 1600px). 목록은 지연 로딩(lazy) 처리.
-- CSS/JS를 수정하면 `index.html`의 `?v=3` 숫자를 올려 주세요. (방문자 브라우저에 예전 파일이 남지 않도록)
+- CSS/JS를 수정하면 `index.html`의 `?v=4` 숫자를 올려 주세요. (방문자 브라우저에 예전 파일이 남지 않도록)
 - 접근성: 본문 바로가기 링크, 키보드 조작(←/→/Esc), `prefers-reduced-motion` 대응.
 - 원본 사진은 저장소에 포함하지 않았습니다 (용량 문제). 원본은 업체 측에서 보관합니다.
 - 향후 문의 폼, 인스타그램 연동, 다국어 등이 필요하면 Astro / Next.js 등으로 이전을 권장합니다.

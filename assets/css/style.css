@@ -27,7 +27,7 @@
   --white: #fffdf9;
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --font-heading: "Gowun Batang", "Nanum Myeongjo", serif;
+  --font-heading: "Hahmlet", "Nanum Myeongjo", serif;
   --font-serif: "Cormorant Garamond", "Times New Roman", serif;
 
   --container: 1240px;
@@ -86,7 +86,7 @@ ol, ul { padding: 0; list-style: none; }
 
 .section-head { margin-bottom: clamp(40px, 6vw, 72px); }
 .section-head--row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
-.section-title { font-family: var(--font-heading); font-size: clamp(1.75rem, 3.6vw, 2.75rem); font-weight: 700; line-height: 1.35; letter-spacing: -0.02em; }
+.section-title { font-family: var(--font-heading); font-size: clamp(1.75rem, 3.6vw, 2.75rem); font-weight: 300; line-height: 1.4; letter-spacing: -0.03em; }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -142,7 +142,7 @@ ol, ul { padding: 0; list-style: none; }
 }
 .hero__title {
   font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.25;
-  font-family: var(--font-heading); font-weight: 700;
+  font-family: var(--font-heading); font-weight: 300;
   letter-spacing: -0.03em; color: var(--ink); margin-bottom: 28px;
 }
 .hero__desc { font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--muted); margin-bottom: 40px; }
@@ -195,7 +195,7 @@ ol, ul { padding: 0; list-style: none; }
 }
 .about__item:last-child { border-bottom: 1px solid rgba(245, 241, 232, 0.2); }
 .about__num { font-family: var(--font-serif); font-size: 1.9rem; line-height: 1.2; color: var(--olive); }
-.about__item h3 { font-family: var(--font-heading); font-size: clamp(1.15rem, 1.8vw, 1.35rem); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
+.about__item h3 { font-family: var(--font-heading); font-size: clamp(1.15rem, 1.8vw, 1.35rem); font-weight: 400; letter-spacing: -0.01em; margin-bottom: 10px; }
 .about__item p { color: rgba(245, 241, 232, 0.75); }
 
 /* 6. 서비스 ----------------------------------------------- */
@@ -250,7 +250,7 @@ ol, ul { padding: 0; list-style: none; }
 /* 8. 문의 / 푸터 ------------------------------------------ */
 .contact { background: var(--charcoal); color: var(--ivory); }
 .contact__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 8vw, 120px); align-items: start; }
-.contact__title { font-family: var(--font-heading); font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 700; line-height: 1.3; letter-spacing: -0.03em; margin-bottom: 24px; }
+.contact__title { font-family: var(--font-heading); font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 300; line-height: 1.3; letter-spacing: -0.03em; margin-bottom: 24px; }
 .contact__desc { color: rgba(245, 241, 232, 0.65); }
 
 .contact__item { padding: 28px 0; border-top: 1px solid rgba(245, 241, 232, 0.16); }
