@@ -19,8 +19,9 @@ viridis/
 │   │   ├── portfolio-data.js     # ★ 카테고리·포트폴리오 사진 목록 (내용 수정은 주로 여기)
 │   │   └── main.js               # 필터, 사진 크게 보기, 메뉴, 스크롤 애니메이션
 │   └── images/
-│       ├── favicon.svg           # 브라우저 탭 아이콘
-│       ├── og-image.jpg          # 카카오톡·SNS 공유 미리보기 이미지 (1200x630)
+│       ├── favicon.png, icon-512.png, apple-touch-icon.png  # 탭·홈화면 아이콘
+│       ├── logo/                 # 로고 (초록 / 어두운 배경용 light / 투명 배경 원본 PNG)
+│       ├── og-viridis.jpg          # 카카오톡·SNS 공유 미리보기 이미지 (1200x630)
 │       └── portfolio/
 │           ├── office/           # OFFICE      : 사무실 및 기업 공간
 │           ├── commercial/       # COMMERCIAL  : 카페·매장·상업공간
@@ -127,8 +128,8 @@ python3 -m http.server 8080
 
 ### 도메인 연결 후 할 일
 - Vercel 프로젝트 → Settings → Domains 에서 도메인 연결
-- `index.html`의 `og:image` 경로를 전체 주소로 바꾸면 공유 미리보기가 더 안정적입니다.
-  예: `https://도메인/assets/images/og-image.jpg` (`og:url`도 함께 추가 권장)
+- `index.html`의 `og:url`, `og:image` 주소(현재 viridis-blush.vercel.app)를 새 도메인으로 바꿔 주세요.
+  카카오톡은 미리보기를 캐시하므로, 바꾼 뒤 카카오 공유 디버거(developers.kakao.com/tool/debugger/sharing)에서 초기화하세요.
 - 네이버 서치어드바이저 / 구글 서치콘솔에 사이트 등록 (검색 노출)
 
 ## 7. 기술 메모 (인수인계용)

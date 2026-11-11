@@ -12,12 +12,15 @@
   <meta property="og:site_name" content="VIRIDIS" />
   <meta property="og:title" content="VIRIDIS | 공간에 자연의 감각을 더하다" />
   <meta property="og:description" content="실크플라워와 공간에 어울리는 프리미엄 플랜테리어" />
-  <meta property="og:image" content="/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://viridis-blush.vercel.app/" />
+  <meta property="og:image" content="https://viridis-blush.vercel.app/assets/images/og-viridis.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="48x48" />
+  <link rel="icon" href="/assets/images/icon-512.png" type="image/png" sizes="512x512" />
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
 
   <!-- 폰트: Pretendard(한글), Cormorant Garamond(영문 포인트) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -52,9 +55,14 @@
   <!-- ========== 헤더 ========== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a class="logo" href="#top" aria-label="VIRIDIS 홈">VIRIDIS</a>
+      <a class="logo" href="#top" aria-label="VIRIDIS 홈">
+        <img class="logo__mark" src="/assets/images/logo/viridis-symbol.webp" alt="" width="178" height="160" />
+        <span class="logo__text">VIRIDIS</span>
+      </a>
 
       <nav class="nav" id="nav" aria-label="주요 메뉴">
+        <!-- 모바일 전체화면 메뉴에서만 보이는 로고 -->
+        <img class="nav__logo" src="/assets/images/logo/viridis-logo.webp" alt="" width="520" height="501" loading="lazy" />
         <a href="#about">About</a>
         <a href="#service">Service</a>
         <a href="#portfolio">Portfolio</a>
@@ -115,6 +123,7 @@
     <section class="about section" id="about">
       <div class="container about__inner">
         <div class="about__head">
+          <img class="about__mark reveal" src="/assets/images/logo/viridis-symbol-light.webp" alt="" width="444" height="400" loading="lazy" />
           <p class="eyebrow eyebrow--light reveal">About VIRIDIS</p>
           <h2 class="about__brand reveal">Viridis</h2>
           <p class="about__lead reveal">
@@ -219,8 +228,12 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span class="logo logo--footer">VIRIDIS</span>
-      <p>장곡로628번길 10 금오종합상가 A106 · 010-4581-7469 · viridia2024@naver.com</p>
+      <img class="footer__logo" src="/assets/images/logo/viridis-logo-light.webp" alt="VIRIDIS" width="520" height="501" loading="lazy" />
+      <p class="footer__info">
+        <span>장곡로628번길 10 금오종합상가 A106</span>
+        <span>010-4581-7469</span>
+        <span>viridia2024@naver.com</span>
+      </p>
       <p class="footer__copy">© <span id="year">2026</span> VIRIDIS. All rights reserved.</p>
     </div>
   </footer>

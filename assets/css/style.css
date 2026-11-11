@@ -115,11 +115,15 @@ ol, ul { padding: 0; list-style: none; }
 .header__inner { display: flex; align-items: center; height: 100%; gap: 40px; }
 
 .logo {
-  font-family: var(--font-serif); font-weight: 600; font-size: 1.6rem;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-serif); font-weight: 600; font-size: 1.6rem; line-height: 1;
   letter-spacing: 0.22em; color: var(--sage-dark);
 }
+.logo__mark { width: auto; height: 44px; margin-top: -6px; /* 잎사귀가 위로 뻗어 있어 시각적 중심 보정 */ }
+.logo__text { padding-top: 4px; }
 
 .nav { display: flex; gap: 36px; margin-left: auto; }
+.nav__logo { display: none; }
 .nav a { position: relative; font-size: 0.92rem; font-weight: 500; color: var(--charcoal); }
 .nav a::after {
   content: ""; position: absolute; left: 0; bottom: -4px; width: 100%; height: 1px;
@@ -175,6 +179,7 @@ ol, ul { padding: 0; list-style: none; }
 /* 5. 소개 ------------------------------------------------- */
 .about { background: var(--sage); color: var(--ivory); }
 .about__inner { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(48px, 8vw, 120px); }
+.about__mark { width: clamp(96px, 11vw, 150px); height: auto; margin: 0 0 28px -6px; }
 .about__head { position: sticky; top: calc(var(--header-h) + 40px); align-self: start; }
 .about__brand {
   font-family: var(--font-serif); font-weight: 400; font-style: italic;
@@ -262,7 +267,10 @@ a.contact__value:hover { color: var(--olive); }
 
 .footer { background: var(--ink); color: rgba(245, 241, 232, 0.55); padding: 48px 0; font-size: 0.85rem; }
 .footer__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; }
-.logo--footer { color: var(--ivory); font-size: 1.3rem; }
+.footer__logo { width: 96px; height: auto; margin-right: 8px; }
+.footer__info { display: flex; flex-wrap: wrap; gap: 4px 0; }
+.footer__info span { white-space: nowrap; }
+.footer__info span + span::before { content: "·"; margin: 0 10px; opacity: 0.6; }
 .footer__copy { margin-left: auto; }
 
 /* 9. 라이트박스 / 빠른 연락 바 ------------------------------ */
@@ -328,8 +336,17 @@ a.contact__value:hover { color: var(--olive); }
     background: var(--ivory); opacity: 0; visibility: hidden; transition: opacity 0.4s var(--ease), visibility 0.4s;
   }
   .nav a { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.06em; }
+  .nav__logo { display: block; width: 132px; height: auto; margin-bottom: 20px; }
   .header.is-open .nav { opacity: 1; visibility: visible; }
-  .logo { position: relative; z-index: 2; }
+  .logo { position: relative; z-index: 2; gap: 8px; font-size: 1.35rem; letter-spacing: 0.2em; }
+  .logo__mark { height: 36px; }
+  .header.is-open .logo { visibility: hidden; } /* 메뉴 안의 큰 로고와 겹치지 않게 */
+  .about__mark { width: 88px; margin-bottom: 20px; }
+  .footer__inner { flex-direction: column; align-items: flex-start; }
+  .footer__logo { width: 84px; margin-bottom: 8px; }
+  /* 모바일: 정보를 한 줄씩 */
+  .footer__info { flex-direction: column; }
+  .footer__info span + span::before { content: none; }
 
   .hero__inner { grid-template-columns: 1fr; }
   .hero__visual { padding-left: 12%; }
