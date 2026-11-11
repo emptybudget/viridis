@@ -130,7 +130,11 @@ python3 -m http.server 8080
    - Output Directory: 비워둠 (루트 그대로 배포)
 4. **Deploy** 클릭
 
-이후 `main` 브랜치에 push하면 자동으로 다시 배포됩니다.
+이후 `main` 브랜치에 push하면 자동으로 실제 사이트(Production)에 배포됩니다.
+`main`이 아닌 다른 브랜치에 push하면 미리보기(Preview) 주소로만 배포됩니다.
+
+- 실제 사이트 기준 브랜치 확인: Vercel 프로젝트 → Settings → Git → Production Branch = `main`
+- 문제가 생기면 Vercel의 Deployments에서 이전 배포를 골라 **Instant Rollback**으로 즉시 되돌릴 수 있습니다.
 
 ### 도메인 연결 후 할 일
 - Vercel 프로젝트 → Settings → Domains 에서 도메인 연결
