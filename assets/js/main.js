@@ -156,7 +156,13 @@
     header.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+    // 메뉴가 열린 동안 뒤 페이지 스크롤과 하단 연락 바를 막음
+    document.body.classList.toggle("is-locked", open);
+    document.body.classList.toggle("menu-open", open);
   }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && header.classList.contains("is-open")) setMenu(false);
+  });
   toggle.addEventListener("click", function () { setMenu(!header.classList.contains("is-open")); });
   nav.addEventListener("click", function (e) { if (e.target.tagName === "A") setMenu(false); });
 
